@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact HenryFlow - Get in Touch">
+    <title>HenryFlow | Contact</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body class="reveal-init">
+    <div id="cursor-dot"></div>
+    <div id="cursor-glow"></div>
+    <header>
+        <div class="header-top">
+            <img src="Photos/HenryFlowLogo.webp" alt="HenryFlow Logo" class="logo">
+            <div class="company-name">HenryFlow</div>
+            <div style="width: 60px;"></div>
+        </div>
+        <div class="blue-line"></div>
+        <nav>
+            <a href="../index.html" class="nav-button">Home</a>
+            <a href="Products.html" class="nav-button">Products</a>
+            <a href="Updates.html" class="nav-button">Updates</a>
+            <a href="Contact.html" class="nav-button active">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contact-container">
+            <div class="glass-card reveal" style="text-align: center;">
+                <h1 class="section-header">Get In Touch</h1>
+                <p class="content-paragraph">
+                    Have questions about our products or want to request a demo? We'd love to hear from you.
+                    Our team is ready to help you elevate your business efficiency.
+                </p>
+
+                <form action="mailto:hsalberts321@gmail.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="email">Contact Email</label>
+                        <input type="email" id="email" name="Email" class="form-input" placeholder="email@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="Subject" class="form-input" placeholder="How can we help?" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product">Product Name</label>
+                        <input type="text" id="product" name="Product" class="form-input" placeholder="e.g. InvenHelper">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="Message" class="form-input" rows="5" placeholder="Your message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="reveal">
+        &copy; 2026 HenryFlow. All rights reserved.
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
