@@ -468,6 +468,22 @@ main {
     box-shadow: 0 0 20px var(--primary-glow);
 }
 
+.form-status {
+    margin-bottom: 18px;
+    min-height: 24px;
+    color: var(--text-bright);
+    font-size: 0.95rem;
+    transition: opacity 0.3s ease;
+}
+
+.form-status.success {
+    color: #9aea9f;
+}
+
+.form-status.error {
+    color: #ff8a8a;
+}
+
 footer {
     text-align: center;
     padding: 40px 20px;

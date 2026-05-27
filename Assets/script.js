@@ -81,4 +81,50 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.style.transform = 'translate(0, 0)';
         });
     });
+
+    // --- Contact Form Submission ---
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+
+    if (contactForm && formStatus) {
+        contactForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            formStatus.textContent = '';
+            formStatus.className = 'form-status';
+
+            const submitButton = contactForm.querySelector('.submit-button');
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.textContent = 'Sending...';
+            }
+
+            const formData = new FormData(contactForm);
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    formStatus.textContent = 'Message sent successfully. Thank you!';
+                    formStatus.classList.add('success');
+                    contactForm.reset();
+                } else {
+                    throw new Error('Submission failed.');
+                }
+            } catch (error) {
+                formStatus.textContent = 'Sorry, the message could not be sent. Please try again later.';
+                formStatus.classList.add('error');
+            } finally {
+                if (submitButton) {
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Send Message';
+                }
+            }
+        });
+    }
 });

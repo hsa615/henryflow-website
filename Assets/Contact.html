@@ -34,23 +34,26 @@
                     Our team is ready to help you elevate your business efficiency.
                 </p>
 
-                <form action="mailto:hsalberts321@gmail.com" method="post" enctype="text/plain">
+                <form id="contact-form" action="https://formsubmit.co/ajax/hsalberts321@gmail.com" method="POST" novalidate>
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_subject" value="New contact message from HenryFlow website">
                     <div class="form-group">
                         <label for="email">Contact Email</label>
-                        <input type="email" id="email" name="Email" class="form-input" placeholder="email@example.com" required>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="email@example.com" required>
                     </div>
                     <div class="form-group">
                         <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="Subject" class="form-input" placeholder="How can we help?" required>
+                        <input type="text" id="subject" name="subject" class="form-input" placeholder="How can we help?" required>
                     </div>
                     <div class="form-group">
                         <label for="product">Product Name</label>
-                        <input type="text" id="product" name="Product" class="form-input" placeholder="e.g. InvenHelper">
+                        <input type="text" id="product" name="product" class="form-input" placeholder="e.g. InvenHelper">
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" name="Message" class="form-input" rows="5" placeholder="Your message here..." required></textarea>
+                        <textarea id="message" name="message" class="form-input" rows="5" placeholder="Your message here..." required></textarea>
                     </div>
+                    <div id="form-status" class="form-status" aria-live="polite"></div>
                     <button type="submit" class="submit-button">Send Message</button>
                 </form>
             </div>
