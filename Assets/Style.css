@@ -191,6 +191,19 @@ main {
     padding: 60px 20px;
 }
 
+.hero-title-row {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.hero-feature-logo {
+    width: 56px;
+    height: auto;
+}
+
 .hero-logo {
     max-width: 180px;
     margin-bottom: 20px;
@@ -208,6 +221,78 @@ main {
     color: var(--text-muted);
     max-width: 700px;
     margin: 0 auto 30px auto;
+}
+
+.github-updates-card {
+    padding: 30px;
+    margin-top: 40px;
+}
+
+.github-updates-form {
+    max-width: 760px;
+    margin-bottom: 24px;
+}
+
+.repo-input-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#github-repo-input {
+    flex: 1;
+    min-width: 210px;
+    padding: 12px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-light);
+}
+
+#github-repo-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.github-updates-list {
+    display: grid;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.github-update-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 22px;
+}
+
+.github-update-card h3 {
+    margin: 0 0 10px;
+    font-size: 1.1rem;
+    color: var(--primary-electric);
+}
+
+.github-update-card p {
+    margin: 6px 0;
+    color: var(--text-muted);
+}
+
+.github-update-commit {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px 12px;
+    border-radius: 12px;
+    margin-top: 10px;
+}
+
+.github-update-commit p {
+    margin: 4px 0;
+}
+
+.github-update-empty {
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
 }
 
 /* Dashboard Mockup Refinement */
@@ -229,6 +314,12 @@ main {
     overflow: hidden;
     transform: rotateX(10deg) rotateY(-5deg);
     animation: floatDashboard 8s ease-in-out infinite;
+}
+
+.dashboard-mockup .dashboard-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 @keyframes floatDashboard {
@@ -392,21 +483,21 @@ main {
 /* InvenHelper Alternating */
 .alternating-section {
     display: flex;
-    align-items: center;
-    gap: 40px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 30px;
     margin-bottom: 60px;
 }
 
 .alternating-section.reverse {
-    flex-direction: row-reverse;
+    flex-direction: column;
 }
 
 .alt-content {
-    flex: 1;
+    width: 100%;
 }
 
 .alt-image {
-    flex: 1;
     width: 100%;
     border-radius: 16px;
     border: 1px solid var(--glass-border);

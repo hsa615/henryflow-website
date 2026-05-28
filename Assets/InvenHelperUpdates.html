@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="InvenHelper Updates - New Features and Improvements">
     <title>HenryFlow | InvenHelper Updates</title>
+    <link rel="icon" href="Photos/HenryFlowLogo.webp" type="image/webp">
+    <link rel="shortcut icon" href="Photos/HenryFlowLogo.webp" type="image/webp">
     <link rel="stylesheet" href="Style.css">
 </head>
 <body class="reveal-init">
@@ -27,15 +29,17 @@
 
     <main>
         <div class="glass-card hero-section reveal">
-            <h1 class="section-header">InvenHelper Release Notes</h1>
+            <h1 class="section-header">InvenHelper GitHub Pushes</h1>
             <div class="content-paragraph" style="text-align: left;">
-                <p><strong>Version 2.4.0 - May 2026</strong></p>
-                <br>
-                <p>We are excited to introduce the new <em>Automated Supplier Sync</em> feature, which allows your inventory to update automatically when suppliers change their pricing or availability. We have also optimized the database indexing, resulting in a 30% increase in dashboard load speeds for larger datasets.</p>
-                <br>
-                <p><strong>Version 2.3.5 - April 2026</strong></p>
-                <br>
-                <p>Fixed a critical bug where some users experienced latency during peak hours. Improved the mobile responsive layout for the reporting module.</p>
+                <p>This page automatically displays the latest push events from the GitHub repository <strong>HSA615/InvenHelper</strong>.</p>
+                <p>The content refreshes whenever the page is opened, so you can always see the most recent pushes without user input.</p>
+            </div>
+        </div>
+
+        <div class="glass-card reveal github-updates-card">
+            <h2 class="section-header">Latest Push Events</h2>
+            <div id="github-updates-container" class="github-updates-list">
+                <div class="github-update-empty">Loading latest push events...</div>
             </div>
         </div>
     </main>

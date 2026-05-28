@@ -127,4 +127,52 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // --- GitHub Push Updates ---
+    const githubUpdatesContainer = document.getElementById('github-updates-container');
+
+    async function fetchGitHubPushEvents() {
+        if (!githubUpdatesContainer) {
+            return;
+        }
+
+        githubUpdatesContainer.innerHTML = '<div class="github-update-empty">Loading latest push events...</div>';
+
+        try {
+            const response = await fetch('/api/github-pushes');
+            if (!response.ok) {
+                const errorData = await response.json().catch(() => ({}));
+                const message = errorData.message || `GitHub API error: ${response.status}`;
+                throw new Error(message);
+            }
+
+            const data = await response.json();
+            const pushEvents = data.pushEvents || [];
+
+            if (!pushEvents.length) {
+                githubUpdatesContainer.innerHTML = '<div class="github-update-empty">No recent push events found for this repository.</div>';
+                return;
+            }
+
+            githubUpdatesContainer.innerHTML = pushEvents.map(event => {
+                const commitMessages = event.commits.map(commit => `<div class="github-update-commit"><p><strong>${commit.message}</strong></p><p>${commit.sha.slice(0, 7)} · ${commit.author}</p></div>`).join('');
+                const pushedAt = new Date(event.pushedAt).toLocaleString();
+
+                return `
+                    <div class="github-update-card">
+                        <h3>${event.actor} pushed ${event.commitCount} commit${event.commitCount === 1 ? '' : 's'} to ${event.branch}</h3>
+                        <p><strong>Repository:</strong> ${data.repo}</p>
+                        <p><strong>Time:</strong> ${pushedAt}</p>
+                        ${commitMessages}
+                    </div>
+                `;
+            }).join('');
+        } catch (error) {
+            githubUpdatesContainer.innerHTML = `<div class="github-update-empty">Unable to load GitHub updates. ${error.message}</div>`;
+        }
+    }
+
+    if (githubUpdatesContainer) {
+        fetchGitHubPushEvents();
+    }
 });
