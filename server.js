@@ -56,6 +56,10 @@ app.get('/api/github-pushes', async (req, res) => {
     }
 });
 
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
 app.listen(PORT, () => {
     console.log(`HenryFlow server running at http://localhost:${PORT}`);
 });
