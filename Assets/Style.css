@@ -665,10 +665,225 @@ main {
     color: #ff8a8a;
 }
 
-footer {
+/* Pricing Tables */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.pricing-card {
     text-align: center;
-    padding: 40px 20px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.pricing-card.featured {
+    border-color: var(--primary-electric);
+    transform: scale(1.05);
+    box-shadow: 0 0 30px var(--primary-glow);
+}
+
+.price-value {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--text-bright);
+    margin: 20px 0;
+}
+
+.price-period {
+    font-size: 1rem;
     color: var(--text-muted);
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+    text-align: left;
+}
+
+.feature-item {
+    padding: 12px 0;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--glass-border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.feature-item::before {
+    content: '✓';
+    color: var(--primary-electric);
+    font-weight: bold;
+}
+
+/* FAQ Accordions */
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--text-bright);
+    padding: 20px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question:hover {
+    border-color: var(--primary-electric);
+    background: rgba(0, 212, 255, 0.05);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 12px 12px;
+    color: var(--text-muted);
+    padding: 0 20px;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    padding: 20px;
+}
+
+.faq-item.active .faq-question {
+    border-radius: 12px 12px 0 0;
+}
+
+/* Auth Forms */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+/* Blog Layout */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.blog-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+}
+
+.blog-image {
+    width: 100%;
+    height: 200px;
+    background: var(--bg-dark);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    object-fit: cover;
+    border: 1px solid var(--glass-border);
+}
+
+.blog-date {
     font-size: 0.8rem;
+    color: var(--primary-electric);
+    margin-bottom: 10px;
+}
+
+/* Expanded Footer */
+footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    padding: 60px 40px;
+    text-align: left;
+    background: var(--bg-dark);
     border-top: 1px solid var(--glass-border);
+}
+
+.footer-section h4 {
+    color: var(--primary-electric);
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary-electric);
+}
+
+.footer-newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.newsletter-input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.newsletter-input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--glass-border);
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+.newsletter-submit {
+    padding: 10px 20px;
+    background: var(--gradient-tech);
+    border: none;
+    border-radius: 8px;
+    color: var(--bg-deep);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.footer-bottom {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding-top: 40px;
+    border-top: 1px solid var(--glass-border);
+    margin-top: 40px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
 }
